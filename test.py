@@ -16,6 +16,9 @@ bot.set_trainer(ListTrainer)
 
 bot.train(conv)
 
+
+#training data
+
 greetings = ['hola', 'hello', 'hi', 'hi', 'hey!','hey']
 
 question = ['how are you','how are you doing']
@@ -77,6 +80,14 @@ user11 = ['mouth ulser']
 user12 = ['heart pain','chest pain','got fracture', 'i am feeling dizzy']
 bot30 = ['please consult a doctor']
 
+#training data end
+
+#function to generate MP3 
+def appu (testText) :
+    myobj = gTTS(text= testText, lang=language, slow=False)
+    myobj.save("test.mp3")
+
+#main
 
 condition = True
 while condition:
@@ -94,21 +105,41 @@ while condition:
         elif text in greetings:
                 random_greeting = random.choice(greetings)
                 print(random_greeting)
-                myobj = gTTS(text=random_greeting, lang=language, slow=False)
-                myobj.save("test.mp3")
+                appu(random_greeting)
                 os.system("mpg321 test.mp3")
         elif text in question:
                 random_response = random.choice(responses)
                 print(random_response)
-                myobj = gTTS(text=random_response, lang=language, slow=False)
-                myobj.save("test1.mp3")
-                os.system("mpg321 test1.mp3")
+                appu (random_response)
+                os.system("mpg321 test.mp3")
         elif text in symptoms:
                 random_response2 = random.choice(responses2)
                 print(random_response2)
-                myobj = gTTS(text=random_response2, lang=language, slow=False)
-                myobj.save("test2.mp3")
-                os.system("mpg321 test2.mp3")
+                appu (random_response2)
+                os.system("mpg321 test.mp3")
+        elif text in user1:
+                random_response3 =  random.choice(bot1)
+                print (random_response3)
+                appu(random_response3)
+                os.system("mpg321 test.mp3")
+                symptom1 = text
+                sym = True
+                while sym:
+                    r = sr.Recognizer()
+                    with sr.Microphone() as source:
+                            print ('Say symptom!')
+                            audio = r.listen(source)
+                    days = 0
+                    days = r.recognize_google(audio) 
+
+                    
+                    if day is days:
+                        if symptom1 == 'headache':
+                            symptom2Res = random.choice(bot12)
+                            print (symptom2Res)
+                            appu (symptom2Res)
+                            os.system("mpg321 test.mp3")
+                            sym = False
         else:
                 print("I did not understand what you said") 
                         
