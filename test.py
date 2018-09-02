@@ -62,11 +62,11 @@ bot12 = ['do have headache?']
 bot13 = ['are you feeling tired?']
 bot14 = ['do you have migrane history?']
 bot15 = ['are you having burnig sensations?']
-bot16 = ['do you have actidity?']
+bot16 = ['do you have acidity?']
 bot17 = ['do you have vomiting']
 bot18 = ['how many hours did you sleep?']
-bot19 = ['do you loose motion?']
-bot20 = ['do you stomach ache?']
+bot19 = ['do you have loose motion?']
+bot20 = ['do you have stomach ache?']
 bot21 = ['do you have indigestion?']
 bot22 = ['do u have cold?']
 bot23 = ['are you working in closed areas?']
@@ -105,7 +105,7 @@ while condition:
         
         while flag:
             disclaimer = 'Hello'
-            myobj = gTTS(text='disclaimer', lang=language, slow=False)
+            myobj = gTTS(text='Hello', lang=language, slow=False)
             myobj.save("hello.mp3")
             os.system("mpg321 hello.mp3")
             flag = False
@@ -117,7 +117,7 @@ while condition:
         text = r.recognize_google(audio)
         if text == 'bye':
                 print ('bye')
-                myobj = gTTS(text='bye', lang=language, slow=False)
+                myobj = gTTS(text='Your OTP is 1 2 5 4 8 thank you for using our services, take care.', lang=language, slow=False)
                 myobj.save("bye.mp3")
                 os.system("mpg321 bye.mp3")
                 condition = False
@@ -187,6 +187,11 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
+
                             sym = False
 
 
@@ -241,6 +246,11 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
+
                             sym = False
 
         elif text in fever:
@@ -295,6 +305,10 @@ while condition:
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
 
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
+
                             sym = False  
         elif text in vomiting:
                 random_response3 =  random.choice(bot1)
@@ -347,6 +361,10 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
         
                             sym = False     
         elif text in loose:
@@ -400,6 +418,10 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
 
                             sym = False                                                 
         elif text in sour:
@@ -467,6 +489,10 @@ while condition:
                                 audio = r.listen(source)
                             symBolean2 = r.recognize_google(audio)
 
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
+
                             sym = False
         elif text in bodyache:
                 random_response3 =  random.choice(bot1)
@@ -519,6 +545,10 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean3 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
         
                             sym = False     
         elif text in breathing:
@@ -561,9 +591,16 @@ while condition:
                                 print ('Say symptom!')
                                 audio = r.listen(source)
                             symBolean2 = r.recognize_google(audio)
+
+                            myobj = gTTS(text='Thank you', lang=language, slow=False)
+                            myobj.save("tqe.mp3")
+                            os.system("mpg321 tqe.mp3")
         
                             sym = False     
         else:
                 print("I did not understand what you said") 
+                myobj = gTTS(text='I did not understand what you said', lang=language, slow=False)
+                myobj.save("error.mp3")
+                os.system("mpg321 error.mp3")
                         
                         
